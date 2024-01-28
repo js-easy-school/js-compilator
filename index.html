@@ -48,42 +48,81 @@
           consoleOutput += JSON.stringify(message) + "\n"; // Преобразуем объект в строку JSON
         } else {
           consoleOutput += message + "\n"; // Сохраняем вывод console.log()
+          document.getElementById("output").innerText = "Результат: " + "\n" + consoleOutput; // Обновляем вывод в элементе output
         }
       };
       try {
         eval(code);
-        document.getElementById("output").innerText = "Результат: " + "\n" + consoleOutput;
       } catch (error) {
         document.getElementById("output").innerText = "Ошибка выполнения кода: " + error;
       }
-    }
-    //     var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
-    //       lineNumbers: true,
-    //       mode: "javascript",
-    //       theme: "default",
-    //       matchBrackets: true // Включаем поддержку скобок
-    //     });
-    //     function resizeEditor() {
-    //       var currentWidth = editor.getWrapperElement().clientWidth;
-    //       var currentHeight = editor.getWrapperElement().clientHeight;
-    //       var newWidth = currentWidth * 1;
-    //       var newHeight = currentHeight * 1.3;
-    //       editor.setSize(newWidth, newHeight);
-    //     }
-    //     function runCode() {
-    //       var code = editor.getValue();
-    //       var consoleOutput = ""; // Переменная для сохранения вывода console.log()
-    //       console.log = function(message) {
-    //         consoleOutput += message + "\n"; // Сохраняем вывод console.log()
-    //       };
-    //       try {
-    //         eval(code);
-    //         document.getElementById("output").innerText = "Результат: " + "\n" + consoleOutput;
-    //       } catch (error) {
-    //         document.getElementById("output").innerText = "Ошибка выполнения кода: " + error;
-    //       }
-    //     }
+    }  
+    
+    
+//     var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+//   lineNumbers: true,
+//   mode: "javascript",
+//   theme: "default",
+//   matchBrackets: true // Включаем поддержку скобок
+// });
+
+// function resizeEditor() {
+//   var currentWidth = editor.getWrapperElement().clientWidth;
+//   var currentHeight = editor.getWrapperElement().clientHeight;
+//   var newWidth = currentWidth * 1;
+//   var newHeight = currentHeight * 1.3;
+//   editor.setSize(newWidth, newHeight);
+// }
+
+// function runCode() {
+//   var code = editor.getValue();
+//   var consoleOutput = ""; // Переменная для сохранения вывода console.log()
+//   console.log = function(message) {
+//     if (typeof message === "object") {
+//       consoleOutput += JSON.stringify(message) + "\n"; // Преобразуем объект в строку JSON
+//     } else {
+//       consoleOutput += message + "\n"; // Сохраняем вывод console.log()
+//     }
+//   };
+//   try {
+//     eval(code);
+//     document.getElementById("output").innerText = "Результат: " + "\n" + consoleOutput;
+//   } catch (error) {
+//     document.getElementById("output").innerText = "Ошибка выполнения кода: " + error;
+//   }
+// }
+
+    
+//     var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+//       lineNumbers: true,
+//       mode: "javascript",
+//       theme: "default",
+//       matchBrackets: true // Включаем поддержку скобок
+//     });
+
+//     function resizeEditor() {
+//       var currentWidth = editor.getWrapperElement().clientWidth;
+//       var currentHeight = editor.getWrapperElement().clientHeight;
+//       var newWidth = currentWidth * 1;
+//       var newHeight = currentHeight * 1.3;
+//       editor.setSize(newWidth, newHeight);
+//     }
+
+//     function runCode() {
+//       var code = editor.getValue();
+//       var consoleOutput = ""; // Переменная для сохранения вывода console.log()
+//       console.log = function(message) {
+//         consoleOutput += message + "\n"; // Сохраняем вывод console.log()
+//       };
+//       try {
+//         eval(code);
+//         document.getElementById("output").innerText = "Результат: " + "\n" + consoleOutput;
+//       } catch (error) {
+//         document.getElementById("output").innerText = "Ошибка выполнения кода: " + error;
+//       }
+//     }
   </script>
 </body>
 
 </html>
+
