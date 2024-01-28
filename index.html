@@ -41,11 +41,20 @@
 
     function runCode() {
       var code = editor.getValue();
+      var consoleOutput = ""; // Переменная для сохранения вывода console.log()
+      var outputElement = document.getElementById("output");
+      console.log = function(message) {
+        if (typeof message === "object") {
+          consoleOutput += JSON.stringify(message) + "\n"; // Преобразуем объект в строку JSON
+        } else {
+          consoleOutput += message + "\n"; // Сохраняем вывод console.log()
+        }
+        outputElement.innerText = "Результат: " + "\n" + consoleOutput; // Обновляем вывод в элементе output
+      };
       try {
-        var result = new Function(code)();
-        document.getElementById("output").innerText = "Результат: " + result;
+        eval(code);
       } catch (error) {
-        document.getElementById("output").innerText = "Ошибка выполнения кода: " + error;
+        outputElement.innerText = "Ошибка выполнения кода: " + error;
       }
     }
   </script>
