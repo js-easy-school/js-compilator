@@ -42,7 +42,7 @@
     function runCode() {
       var code = editor.getValue();
       try {
-        var result = eval(code);
+        var result = new Function(code)();
         document.getElementById("output").innerText = "Результат: " + result;
       } catch (error) {
         document.getElementById("output").innerText = "Ошибка выполнения кода: " + error;
